@@ -68,9 +68,9 @@ async function findSuperHeroes() {
 }
 
 
-//insertSuperHero();
-//updateSuperHero('Thor');
-//findSuperHeroes();
+insertSuperHero();
+updateSuperHero('Thor');
+findSuperHeroes();
 //deleteSuperHero('Thor');
 
 
