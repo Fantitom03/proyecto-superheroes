@@ -1,7 +1,8 @@
 {
   "name": "proyecto-superheroes",
   "version": "1.0.0",
-  "main": "app.js",
+  "type": "module",
+  "main": "server.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.mjs"
@@ -10,7 +11,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "express-validator": "^7.2.0",
     "mongoose": "7.0"
   }
 }

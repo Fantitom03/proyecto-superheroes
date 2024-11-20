@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>User List</title>
+    </head>
+    <body>
+        <h1>User List</h1>
+        <ul>
+            <%
+            users.forEach(user => { %> })
+            <li>
+                <a href="/users/<%=user.id%>"><%=user.name%> (Age: <%=user.age%>)</a>
+            </li>
+        </ul>
+    </body>
+</html>
