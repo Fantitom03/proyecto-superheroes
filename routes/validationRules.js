@@ -2,27 +2,27 @@ import { body } from 'express-validator';
 
 export const superheroValidationRules = () => [
     body('nombreSuperHeroe')
-        .notEmpty().withMessage('El nombre del superhéroe es obligatorio')
-        .isString().withMessage('El nombre del superhéroe debe ser un texto')
-        .trim().escape(),
+        .notEmpty().withMessage('El nombre del superhéroe es obligatorio.')
+        .trim().withMessage('El nombre del superhéroe no debe tener espacios al inicio o al final.')
+        .isLength({ min: 3, max: 60 }).withMessage('El nombre del superhéroe debe tener entre 3 y 60 caracteres.'),
     body('nombreReal')
-        .notEmpty().withMessage('El nombre real es obligatorio')
-        .isString().withMessage('El nombre real debe ser un texto')
-        .trim().escape(),
+        .notEmpty().withMessage('El nombre real es obligatorio.')
+        .trim().withMessage('El nombre real no debe tener espacios al inicio o al final.')
+        .isLength({ min: 3, max: 60 }).withMessage('El nombre real debe tener entre 3 y 60 caracteres.'),
     body('edad')
-        .optional()
-        .isInt({ min: 0 }).withMessage('La edad debe ser un número mayor o igual a 0'),
-    body('planetaOrigen')
-        .optional()
-        .isString().withMessage('El planeta de origen debe ser un texto')
-        .trim().escape(),
+        .notEmpty().withMessage('La edad es obligatoria.')
+        .isInt({ min: 0 }).withMessage('La edad debe ser un número entero mayor o igual a 0.')
+        .toInt(), // Asegura que el valor sea numérico.
     body('poderes')
-        .isArray().withMessage('Los poderes deben ser una lista de texto')
-        .optional(),
-    body('aliados')
-        .optional()
-        .isArray().withMessage('Los aliados deben ser una lista de texto'),
-    body('enemigos')
-        .optional()
-        .isArray().withMessage('Los enemigos deben ser una lista de texto')
+        .notEmpty().withMessage('Debe proporcionar al menos un poder.')
+        .custom(value => {
+          if (typeof value !== 'string') {
+            throw new Error('Debe ser una cadena de texto separada por comas.');
+          }
+          const poderes = value.split(',').map(p => p.trim());
+          if (!poderes.every(p => p.length > 0)) {
+            throw new Error('Cada poder debe tener texto válido.');
+          }
+          return true;
+        }),
 ];

@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+
+<div class="container mx-auto px-4 py-6">
+  <div class="mb-6">
+    <a href="/superheroes" class="text-blue-400 hover:underline">Volver al Dashboard</a>
+  </div>
+
+  <h1 class="text-2xl font-bold text-white mb-4">Agregar un Nuevo Superhéroe</h1>
+
+  <form action="/superheroes/agregar" method="POST" class="bg-gray-800 shadow-lg rounded-lg p-6">
+    <div class="mb-4">
+      <label for="nombreSuperHeroe" class="block text-sm font-medium text-gray-300">Nombre del Superhéroe:</label>
+      <input type="text" id="nombreSuperHeroe" name="nombreSuperHeroe" required minlength="3" maxlength="60" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="nombreReal" class="block text-sm font-medium text-gray-300">Nombre Real:</label>
+      <input type="text" id="nombreReal" name="nombreReal" required minlength="3" maxlength="60" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="edad" class="block text-sm font-medium text-gray-300">Edad:</label>
+      <input type="number" id="edad" name="edad" required min="0" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="planetaOrigen" class="block text-sm font-medium text-gray-300">Planeta de Origen:</label>
+      <input type="text" id="planetaOrigen" name="planetaOrigen" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="debilidad" class="block text-sm font-medium text-gray-300">Debilidad:</label>
+      <input type="text" id="debilidad" name="debilidad" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="poderes" class="block text-sm font-medium text-gray-300">Poderes (separados por comas):</label>
+      <input type="text" id="poderes" name="poderes" required placeholder="Ejemplo: Volar, Súper fuerza, Invisibilidad" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="aliados" class="block text-sm font-medium text-gray-300">Aliados (separados por comas):</label>
+      <input type="text" id="aliados" name="aliados" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div class="mb-4">
+      <label for="enemigos" class="block text-sm font-medium text-gray-300">Enemigos (separados por comas):</label>
+      <input type="text" id="enemigos" name="enemigos" 
+        class="mt-1 block w-full px-3 py-2 bg-gray-900 text-gray-300 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+
+    <div>
+      <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-md shadow hover:bg-blue-700">
+        Agregar Superhéroe
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include('partials/footer') %>
