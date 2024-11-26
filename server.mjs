@@ -16,7 +16,7 @@ import expressLayouts from 'express-ejs-layouts';
 console.log("express layouts importados");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Configurar `__dirname` en entorno ES Module
 const __filename = fileURLToPath(import.meta.url);
