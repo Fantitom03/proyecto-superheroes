@@ -1,19 +1,11 @@
 import express from 'express';
-console.log("express importado");
 import path from 'path';
-console.log("path importado");
 import { fileURLToPath } from 'url';
-console.log("url importado");
 import superheroesRoutes from './routes/superheroesRoutes.js';
-console.log("rutas superheroes importadas");
 import otherRoutes from './routes/otherRoutes.js';
-console.log("otras rutas importadas");
 import './dbConfig.js'; // Conexión a la base de datos
-console.log("base de datos conectada importadas");
 import methodOverride from 'method-override';
-console.log("método override importado");
 import expressLayouts from 'express-ejs-layouts';
-console.log("express layouts importados");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
