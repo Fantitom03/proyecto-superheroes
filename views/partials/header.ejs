@@ -1,42 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Superheroes Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-image: url('/img/fondo.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      font-family: 'Arial', sans-serif;
-    }
-    .min-h-screen { /* Para asegurar el footer al final */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    main {
-      flex: 1; /* Para que el contenido crezca y empuje el footer hacia abajo */
-    }
-  </style>
-</head>
-<body class="bg-gray-900 text-gray-100 min-h-screen">
-  <header class="bg-blue-600 text-white shadow-lg">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Superheroes Dashboard</h1>
-      <nav>
-        <ul class="flex space-x-4">
-          <li>
-            <a href="/" class="hover:underline">Inicio</a>
-          </li>
-          <li>
-            <a href="/superheroes" class="hover:underline">Lista de Héroes</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="container mx-auto px-4 py-6">
+<header class="bg-blue-600 text-white shadow-lg">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo interactivo -->
+    <a href="/" class="hover:scale-105 hover:rotate-6 transform transition-transform duration-300">
+      <img src="/img/imagenNavbar.png" alt="Logo de Superheroes Inc" class="h-12 w-auto">
+    </a>
+    <!-- Navegación -->
+    <nav>
+      <ul class="flex space-x-4">
+        <li>
+          <a href="/" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="/superheroes" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+            Lista de Héroes
+          </a>
+        </li>
+        <li>
+          <a href="/contact" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+            Contacto
+          </a>
+        </li>
+        <li>
+          <a href="/about" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+            Acerca De
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

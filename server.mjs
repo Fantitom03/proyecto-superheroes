@@ -2,8 +2,10 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import superheroesRoutes from './routes/superheroesRoutes.js';
+import otherRoutes from './routes/otherRoutes.js';
 import './dbConfig.js'; // Conexión a la base de datos
 import methodOverride from 'method-override';
+import expressLayouts from 'express-ejs-layouts';
 
 const app = express();
 const PORT = 3000;
@@ -21,12 +23,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
+app.use(expressLayouts);
+app.set('layout', 'layout'); //Archivo base de layout
+
+
 // Rutas para las vistas
-app.get('/', (req, res) => res.render('index'));
+app.use('/', otherRoutes);
 app.use('/superheroes', superheroesRoutes);
 
+
 // Configurar carpeta de archivos estáticos
-app.use(express.static('public'));
+app.use(express.static(path.resolve('./public')));
 
 
 // Servidor

@@ -19,10 +19,12 @@ router.get('/', obtenerTodosLosSuperheroesController);
 // GET: Obtener un superhéroe por ID
 router.get('/buscarID/:id', obtenerSuperheroePorIdController);
 
+
 // GET: Mostrar formulario para agregar superhéroe
 router.get('/agregar', (req, res) => { 
-     res.render('addSuperhero'); 
+     res.render('addSuperhero', { title: 'Lista de Superhéroes'});
 });
+
 
 // POST: Agregar un nuevo superhéroe
 router.post('/agregar', superheroValidationRules(), handleValidationErrors, (req, res) => {
@@ -35,11 +37,12 @@ router.get('/:id/editar', editarSuperheroeController);
 
 
 // POST: Ruta para actualizar un superhéroe EDITADO
-router.post('/:id/editar', actualizarSuperheroeEditadoController);
+router.post('/:id/editar', superheroValidationRules(), handleValidationErrors, (req,res) => {
+     actualizarSuperheroeEditadoController(req, res)
+});
 
 // DELETE: Ruta para eliminar un superhéroe
 router.delete('/:id', eliminarSuperheroeController);
-
 
 
 
@@ -47,7 +50,7 @@ router.delete('/:id', eliminarSuperheroeController);
 
 
 
-
+/*
 // GET: Buscar superhéroes por atributo
 router.get('/buscar/:atributo/:valor', buscarSuperheroesPorAtributoController);
 
@@ -80,6 +83,6 @@ router.delete('/:id', (req, res) => eliminarSuperheroePorIdController(req, res))
 // DELETE: Borrar un superhéroe por nombre
 router.delete('/nombre/:nombre', (req, res) => eliminarSuperheroePorNombreController(req, res));
 
-
+*/
 
 export default router;

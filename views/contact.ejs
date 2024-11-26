@@ -1,0 +1,26 @@
+<section class="bg-gray-800 p-8 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center mb-6 text-blue-400">Contáctanos</h1>
+    <p class="text-center mb-8 text-gray-300">
+        Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos. ¡Estamos aquí para ayudarte!
+    </p>
+    <form action="/contact" method="POST" class="space-y-6 max-w-md mx-auto">
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-300">Nombre completo</label>
+            <input type="text" id="name" name="name" required 
+                class="w-full mt-1 px-4 py-2 bg-gray-900 border border-gray-600 rounded focus:ring focus:ring-blue-400">
+        </div>
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-300">Correo electrónico</label>
+            <input type="email" id="email" name="email" required 
+                class="w-full mt-1 px-4 py-2 bg-gray-900 border border-gray-600 rounded focus:ring focus:ring-blue-400">
+        </div>
+        <div>
+            <label for="message" class="block text-sm font-medium text-gray-300">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required 
+                class="w-full mt-1 px-4 py-2 bg-gray-900 border border-gray-600 rounded focus:ring focus:ring-blue-400"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+            Enviar mensaje
+        </button>
+    </form>
+</section>

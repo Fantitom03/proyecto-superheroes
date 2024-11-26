@@ -22,7 +22,7 @@ export async function obtenerSuperheroePorIdController(req, res) {
 export async function obtenerTodosLosSuperheroesController(req, res) {
   try {
     const superheroes = await obtenerTodosLosSuperheroes();
-    res.render('dashboard', { superheroes }); // Renderizar la vista con los datos
+    res.render('dashboard', { title: 'Lista de Superhéroes', superheroes }); // Renderizar la vista con los datos
   } catch (error) {
     res.status(500).send({
       mensaje: "Error al obtener la lista de superhéroes",
@@ -74,7 +74,7 @@ export async function editarSuperheroeController (req, res){
     }
 
     // Renderizar la vista de edición con los datos del superhéroe
-    res.render('editSuperhero', { superheroe });
+    res.render('editSuperhero', { title: 'Editar de Superhéroes', superheroe });
   } catch (error) {
     console.error('Error al obtener el superhéroe para edición:', error);
     res.status(500).send('Error interno del servidor');

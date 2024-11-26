@@ -23,6 +23,9 @@ export const superheroValidationRules = () => [
           if (!poderes.every(p => p.length > 0)) {
             throw new Error('Cada poder debe tener texto válido.');
           }
+          if (poderes.length < 3) {
+            throw new Error('Debe proporcionar al menos 3 poderes.');
+          }
           return true;
         }),
 ];
