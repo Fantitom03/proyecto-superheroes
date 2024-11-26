@@ -4,26 +4,35 @@
     <a href="/" class="hover:scale-105 hover:rotate-6 transform transition-transform duration-300">
       <img src="/img/imagenNavbar.png" alt="Logo de Superheroes Inc" class="h-12 w-auto">
     </a>
+    <!-- Botón de menú móvil -->
+    <button 
+      id="mobile-menu-button" 
+      class="lg:hidden block text-white focus:outline-none focus:ring-2 focus:ring-white"
+      aria-label="Abrir menú de navegación">
+      <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
     <!-- Navegación -->
-    <nav>
-      <ul class="flex space-x-4">
+    <nav id="mobile-menu" class="hidden lg:flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 absolute lg:static bg-blue-600 lg:bg-transparent top-16 left-0 w-full lg:w-auto z-50">
+      <ul class="flex flex-col lg:flex-row">
         <li>
-          <a href="/" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+          <a href="/" class="block px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
             Inicio
           </a>
         </li>
         <li>
-          <a href="/superheroes" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+          <a href="/superheroes" class="block px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
             Lista de Héroes
           </a>
         </li>
         <li>
-          <a href="/contact" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+          <a href="/contact" class="block px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
             Contacto
           </a>
         </li>
         <li>
-          <a href="/about" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
+          <a href="/about" class="block px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded-lg shadow-md transition-colors duration-300">
             Acerca De
           </a>
         </li>
