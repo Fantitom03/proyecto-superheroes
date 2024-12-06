@@ -13,19 +13,22 @@ export const superheroValidationRules = () => [
         .notEmpty().withMessage('La edad es obligatoria.')
         .isInt({ min: 0 }).withMessage('La edad debe ser un número entero mayor o igual a 0.')
         .toInt(), // Asegura que el valor sea numérico.
-    body('poderes')
+        body('poderes')
         .notEmpty().withMessage('Debe proporcionar al menos un poder.')
         .custom(value => {
-          if (typeof value !== 'string') {
-            throw new Error('Debe ser una cadena de texto separada por comas.');
-          }
-          const poderes = value.split(',').map(p => p.trim());
-          if (!poderes.every(p => p.length > 0)) {
-            throw new Error('Cada poder debe tener texto válido.');
-          }
-          if (poderes.length < 3) {
-            throw new Error('Debe proporcionar al menos 3 poderes.');
-          }
-          return true;
+            if (typeof value !== 'string') {
+                throw new Error('Debe ser una cadena de texto separada por comas.');
+            }
+            const poderes = value.split(',').map(p => p.trim());
+            if (!poderes.every(p => p.length > 0)) {
+                throw new Error('Cada poder debe tener texto válido.');
+            }
+            if (poderes.length < 3) {
+                throw new Error('Debe proporcionar al menos 3 poderes.');
+            }
+            if (!poderes.every(p => p.length > 2)) {
+                throw new Error('Cada poder debe tener más de 2 letras.');
+            }
+            return true;
         }),
 ];
